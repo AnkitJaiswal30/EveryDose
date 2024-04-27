@@ -86,12 +86,12 @@ const Lists = (props) => {
               <tbody>
                 {list.length > 0 ? list.map((item, index) => {
                 return (
-                  <tr>
+                  <tr key={item?.itemId}>
                     {/* <th scope="row">{index+1}</th> */}
                     <td>{item.itemName}</td>
                     <td>{<UpDownArrowButton id={item.itemId} quantity={item.quantity} list= {list} setList={setList}/>}</td>
                     <td>
-                      <div onClick={() => {handleDeleteItem(item.itemId)}}>
+                      <div onClick={() => {handleDeleteItem(item.itemId)}} id={'closeButton'}>
                         <CloseIcon color="error" />
                       </div> 
              
@@ -112,7 +112,7 @@ const Lists = (props) => {
                 <tbody>
                   {deletedList.length>0 ? deletedList.map((item, index) => {
                   return (
-                    <tr>
+                    <tr key={item?.itemId}>
                       {/* <th scope="row">{index+1}</th> */}
                       <td>{item.itemName}</td>
                       <td>{<UpDownArrowButton id={item.itemId} quantity={item.quantity} list= {deletedList} setList={setDeletedList}/>}</td>

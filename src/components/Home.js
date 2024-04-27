@@ -25,7 +25,7 @@ const Home = (props) => {
               <tbody>
                 {list.length > 0 ? list.map((item, index) => {
                 return (
-                  <tr>
+                  <tr key={item?.itemId}>
                     <th scope="row">{index+1}</th>
                     <td>{item.itemName}</td>
                     <td>{item.quantity}</td>
