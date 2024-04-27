@@ -7,9 +7,8 @@ import RestoreIcon from '@mui/icons-material/Restore';
 import './Lists.css'
 
 const Lists = (props) => {
-  const { list, setList } = props
+  const { list, setList, deletedList, setDeletedList } = props
   const [showDeleted, setShowDeleted] = useState(false)
-  const [deletedList, setDeletedList] = useState([])
   const [itemName, setItemName] = useState('')
   const [quantity, setQuantity] = useState(1)
   const [errorOnName, setErrorOnName] = useState('')
@@ -85,7 +84,7 @@ const Lists = (props) => {
                 </tr>
               </thead>
               <tbody>
-                {list.map((item, index) => {
+                {list.length > 0 ? list.map((item, index) => {
                 return (
                   <tr>
                     {/* <th scope="row">{index+1}</th> */}
@@ -99,7 +98,7 @@ const Lists = (props) => {
                     </td>
                   </tr>
                 )
-                })}
+                }): <div>No Record Found</div>}
               </tbody>
           </Table>
           {

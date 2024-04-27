@@ -23,7 +23,7 @@ const Home = (props) => {
                 </tr>
               </thead>
               <tbody>
-                {list.map((item, index) => {
+                {list.length > 0 ? list.map((item, index) => {
                 return (
                   <tr>
                     <th scope="row">{index+1}</th>
@@ -31,7 +31,7 @@ const Home = (props) => {
                     <td>{item.quantity}</td>
                   </tr>
                 )
-                })}
+                }): <div>No Record Found</div>}
               </tbody>
             </Table>
             <button className="btn btn-primary" onClick={handleEditClick}>Edit List</button>
