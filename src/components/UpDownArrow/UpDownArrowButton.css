@@ -1,0 +1,8 @@
+.arrowContainer {
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    display: flex;
+    align-items: center;
+}

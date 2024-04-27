@@ -1,0 +1,19 @@
+.itemNameInputWrapper{
+    width: 60%;
+    padding-right: 15px;
+}
+.inputBoxFit {
+    width: 100%;
+    height: fit-content;
+}
+.error{
+    color: 'red';
+}
+.footerWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.showDeleted{
+    display: flex;
+    align-items: center;
+}
